@@ -1,0 +1,19 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'Inter', sans-serif;
+}
+.custom-slider-button {
+  background-image: url('./Components/Banner/Frame.png');
+}
+.bg-overlay {
+  background: linear-gradient(90deg, #151515 0%, rgba(21, 21, 21, 0.00) 100%);
+  background-blend-mode: overlay;
+
+
+}

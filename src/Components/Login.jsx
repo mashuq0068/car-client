@@ -4,6 +4,7 @@ import { AuthContext } from "../Providers/Authprovider";
 import axios from "axios";
 
 
+
 const Login = () => {
   const {loginUser } = useContext(AuthContext)
   // const location = useLocation()
@@ -20,12 +21,9 @@ const Login = () => {
           console.log(data)
           const user = {email}
           axios.post('http://localhost:5000/jwt' , user , {withCredentials:true})
-          .then(res =>{
-            console.log(res.data)
-            // if(res.data.result){
-            //   navigate(location?.state ? location.state : '/')
-            // }
-          })
+          .then(data => console.log(data.data))
+         
+        
 
         })
         .catch(error => console.error(error.message))

@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import Service from "../Service/Service";
+import axios from "axios";
 
 
 const Services = () => {
     const [services , setServices]  = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
-        .then(res => res.json())
-        .then(data => setServices(data))
+        axios.get('http://localhost:5000/services' , {withCredentials:true} )
+        .then(res => {
+            console.log(res.data)
+            setServices(res.data)
+        })
+        
+        
     },[])
     return (
         <div className="grid grid-cols-3 w-[80%] mx-auto gap-5">
